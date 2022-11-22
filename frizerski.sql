@@ -1,4 +1,4 @@
-# c:\xampp\mysql\bin\mysql -uroot < C:\Users\Tonko\edunovapp26\frizerski.sql
+# c:\xampp\mysql\bin\mysql -uroot < C:\Users\Tonko\Documents\edunovapp26\SQL\ucenje\frizerski.sql
 
 drop database if exists frizerski;
 create database frizerski;
@@ -16,14 +16,16 @@ create table frizerskisalon(
 create table djelatnik(
     sifra int not null primary key auto_increment,
     ime int,
-    prezime int
+    prezime int,
     frizerskisalon int
 );
 
 create table korisnik(
     sifra int not null primary key auto_increment,
     ime varchar(50),
-    prezime varchar(50)
+    prezime varchar(50),
+    frizerskisalon int
 );
 
 alter table djelatnik add foreign key (frizerskisalon) references frizerskisalon(sifra);
+

@@ -1,5 +1,5 @@
 
-# c:\xampp\mysql\bin\mysql -uroot < C:\Users\Tonko\edunovapp26\hijerarhija.sql
+# c:\xampp\mysql\bin\mysql -uroot < C:\Users\Tonko\Documents\edunovapp26\SQL\ucenje\hijerarhija.sql
 
 drop database if exists hijerarhija;
 create database hijerarhija;
