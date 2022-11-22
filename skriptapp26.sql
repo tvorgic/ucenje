@@ -1,17 +1,6 @@
-
-
-# ljestve (hash) je komentar i on se ne izvodi
-# Izvođenje naredbi na serveru
-# Otvoriti CMD
-# Zaljepiti sljedeću naredbu bez prvog hash znaka
-# c:\xampp\mysql\bin\mysql -uroot < C:\Users\dell\Documents\EdunovaPP26\skriptapp26.sql
-# c:\xampp\mysql\bin\mysql -uroot < C:\Users\Tonko\edunovapp26\skripta.sql
-
-
-
-drop database if exists skripta;
-create database skripta;
-use skripta;
+drop database if exists edunovapp26;
+create database edunovapp26;
+use edunovapp26;
 
 create table smjer(
     sifra int not null primary key auto_increment,
@@ -22,6 +11,7 @@ create table smjer(
     certificiran boolean
 );
 
+
 create table grupa(
     sifra int not null primary key auto_increment,
     naziv varchar(50),
@@ -29,7 +19,9 @@ create table grupa(
     datumpocetka datetime,
     smjer int,
     predavac int
+
 );
+
 
 create table osoba(
     sifra int not null primary key auto_increment,
@@ -37,6 +29,7 @@ create table osoba(
     prezime varchar(50),
     email varchar(50),
     oib char(11)
+
 );
 
 create table polaznik(
@@ -44,6 +37,7 @@ create table polaznik(
     brojugovora varchar(20),
     osoba int
 );
+
 
 create table predavac(
     sifra int not null primary key auto_increment,
@@ -57,22 +51,18 @@ create table clan(
 );
 
 
+
 alter table grupa add foreign key (smjer) references smjer(sifra);
+
 alter table grupa add foreign key (predavac) references predavac(sifra);
 
 alter table clan add foreign key (grupa) references grupa(sifra);
+
 alter table clan add foreign key (polaznik) references polaznik(sifra);
 
 alter table polaznik add foreign key (osoba) references osoba(sifra);
 
 alter table predavac add foreign key (osoba) references osoba(sifra);
-
-
-
-
-
-
-
 
 
 
