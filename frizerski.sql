@@ -1,4 +1,7 @@
+
+
 # c:\xampp\mysql\bin\mysql -uroot < C:\Users\Tonko\Documents\edunovapp26\SQL\ucenje\frizerski.sql
+
 
 drop database if exists frizerski;
 create database frizerski;
